@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Episode 2</title>
+	</head>
+	<body>
+		Enter Dimensions of a triangle:
+		<form action="/" method="post">
+			<input type="text" name="a"/>
+			<input type="text" name="b"/>
+			<input type="text" name="c"/>
+			<input type="submit" value="is it a triangle?"/>
+		</form>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				Results:
+				<pre>
+					{% for message in messages %}
+{{message}}
+					{% endfor %}
+				</pre>
+			{% endif %}
+		{% endwith %}
+	</body>
+</html>
