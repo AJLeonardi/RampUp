@@ -1,0 +1,10 @@
+*** Cut and paste the for loop here ***
+					{% for message in messages %}
+{{message}}
+					{% endfor %}
+
+*** What is the for loop doing? ***
+
+first (before the for loop) we use get_flashed_messages() to assign a variable called "messages" with each message that was "flashed" from the session.
+next (still before the for loop) we test to see if that variable has a value -- i.e. if we flashed anything.
+then we enter the for loop. for each element in the variable "messages" we declare it as "message" -- and then {{message}} just displays the contents of that current element of "messages" --> seems to work like an echo in PHP or print in python.

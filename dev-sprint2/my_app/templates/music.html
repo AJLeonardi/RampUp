@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block body %}
+
+	<h2>Music</h2>
+	<audio controls ="controls" autoplay="autoplay"></audio>
+	<ul>
+		{% for song in songs %}
+		<li><a href="javascript:void(0);" onclick="playSong('{{song}}')">{{song}}</li>
+		{% endfor %}
+	</ul>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<br>
+				Results:
+				<pre>
+					{% for message in messages %}
+{{message}}
+					{% endfor %}
+				</pre>
+				{% endif %}
+			{% endwith %}
+	<script type="text/javascript">
+		function playSong(song){
+			console.log(song);
+			$('audio').attr('src', '/static/music/' + song);
+		}
+	</script>
+{% endblock %}
+{% block nav %}
+<li><a href="{{url_for('index')}}">back </a></li>
+{% endblock %}

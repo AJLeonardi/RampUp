@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Week 2 Lab</title>
+        <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" type="text/css" href="/static/style.css" />
+        <script type="text/javascript" src="/static/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="/static/bootstrap/js/holder.js"></script>
+    </head>
+    <body>
+
+        <div style="float: left">
+            <ul class = "nav nav-list">
+                {% block nav %}{% endblock %}
+                <li class="nav-header">Public Pages</li>
+                <li><a href="{{url_for('main')}}">index</a></li>
+                <li class= "active"><a href="/favorites/">favorites</a></li>
+                <li><a href="/about/">about</a></li>
+                <li><a href="/contact/">contact</a></li>
+                {% if 'username' in session %}
+                <li class="nav-header">Private Pages</li>
+                <li><a href="{{url_for('remote')}}">remote control</a></li>
+                <li><a href="{{url_for('music')}}">music</a></li>
+                <li class="divider"></li>
+                <li><a href="{{url_for('login')}}">logout</a>
+                {% else %}
+                <li class="divider"></li>
+                <li><a href="{{url_for('login')}}">login</a>
+                {% endif %}
+            </ul>
+        </div>
+
+        <div id="content">
+            {% block body %}{% endblock %}
+        </div>
+
+        <div id="flashed">
+        {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+            {{message}}
+        {% endfor %}
+        {% endwith %}
+        </div>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+    </body>
+</html>

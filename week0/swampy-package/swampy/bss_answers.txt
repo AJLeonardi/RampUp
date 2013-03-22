@@ -1,0 +1,56 @@
+# Text answers from Week 0
+
+# Name: Anthony Leonardi
+
+
+
+Explain what each of the following lines does. Use the terminology you learned from the book (or Google)
+	
+	from TurtleWorld import *
+	world = TurtleWorld()
+	bob = Turtle()
+	wait_for_user()
+
+Answer:
+Line 1 imports all the objects (functions, attributes, etc) in TurtleWorld so that they are directly referenceable by this file (module). if that line read "import TurtleWorld" it would create a module object which is referenceable. In that case we'd have to use dot notation to reference objects in TurtleWorld like so: world = TutrleWorld.TurtleWorld()
+
+Line 2 sets the variable "world" to the return value of the function "TurtleWorld()" which in this case the return value is the "turtle world" object. "world" is an instance of "TurtleWorld"
+
+Line 3 is the same as line two, except instead of creating an instance of TurtleWorld and assinging it to world, we're creating a new instance of Turtle and assigning it to bob.
+
+line 4 calls a function which tells the program to wait for the user to do something.
+
+
+
+
+
+
+These questions pertain to the program you wrote in Week0.
+
+-- What are the arguments of polygon()?  What type is each argument?
+Answer: t (type Turtle), l (type: positive number float/int), n (type: positive int)
+
+-- What two turtle functions did you use to draw the sides of the polygon?
+Answer: the two function names are fd and lt
+
+-- What are the arguments for polyline?  What type is each argument?
+Answer: I called mine drawPolyGen which is a terrible name, the arguments are:
+	t (Turtle)
+	l (number int/float)
+	deg (number int/float)
+	n (int)
+
+
+
+
+
+Suppose you wrote a function, center_circle(), that draws a circle of a given radius around the current location of the turtle and restores the turtle to its starting point.
+
+-- What turtle functions would you use to move the turtle from the center to the edge of the circle and get ready to call the original circle() function?
+Answer: pu, rt, fd, pd (would need to call rt twice to get it facing the right direction -- or just use lt)
+
+-- Suppose the interface of this function requires the turtle to end up in the same place it started, facing in the same direction it started.
+Answer: I'd create a move_turtle function which would use the same Turtle functions above. it would take a length and turtle as arguments. before calling circle() I'd call move_turtle and pass radius as the length, after circle I'd call it with (radius - 2*radius).
+
+-- What is this type of requirement called?
+Answer: a postcondition

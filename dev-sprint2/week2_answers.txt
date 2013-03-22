@@ -1,0 +1,14 @@
+# Please put answers for the week2 stand alone questions here
+# Name: Anthony Leonardi
+
+3 Web Apps of similar size:
+1. a simple read-only google drive w/login
+	- pictures page which shows the contents of a photo folder on your computer, when you click on a photo it's displayed.
+	- documents page which shows the list of documents in the folder -- when you click on a doc, you see the contents of the document (use the file stuff from the book)
+2. a text manipulation site:
+	- page to type in text -- it echos back the word count
+	- page to type in text -- it reverses the words
+	- page to type in text -- swaps case of each letter
+3. a style test page
+	- page contains a few different HTML elements
+	- each element associated with a text box for user to type css into. the app would apply the css to the corresponding element for user to see.
