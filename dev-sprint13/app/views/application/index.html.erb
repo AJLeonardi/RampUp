@@ -1,0 +1,23 @@
+
+<div class='media'>
+	<a class='pull-left' href='#'>
+		<iframe src="https://embed.spotify.com/?uri=spotify:trackset:PREFEREDTITLE:<%= @song_list %>" width='250' height='350' frameborder="0" allowtransparency="true" style="padding-left: 5px;"></iframe>
+	</a>
+	<div class='media-body'>
+		<h2 class= 'media-heading'>Listen to the Hottttest bands from <%= @loc %></h2>
+		<div class='row'>
+			<ul class ='thumbnails' style='margin-left: 0px;'>
+				<% @artists.each do |artist| %>
+					<li class='span2' style='background-color:#FFF;'>
+						<div class='thumbnail'>
+							<div class="caption">
+								<h4 style='margin-top:0px; margin-bottom:0px;'><a href='<%= artist['url'] %>' class=''><%= artist['name'].gsub('+', ' ') %></a></h4>
+							</div>
+							<img src='<%= artist['img_url'] %>' class='img-rounded'>
+						</div>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>

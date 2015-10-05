@@ -1,0 +1,35 @@
+<HTML>
+	<head>
+		<%= stylesheet_link_tag    "application", :media => "all" %>
+	  	<%= javascript_include_tag "application" %>
+	</head>
+	<body>
+		<div class='container' style='margin-top: 5px;'>
+			<div class='row'>
+				<!--<div class='span1 ' style='background-color: black;'>
+					<ul class='nav nav-list'>
+						<li><a href='#'>index</a></li>
+						<li><a href='#'>other1</a></li>
+						<li><a href='#'>other2</a></li>
+					</ul>
+				</div>-->
+				<div class='span12' style='background-color: #BAD3DB; border-radius:5px;'>
+					<div>
+						<p>
+						<!--<%= link_to 'Test', test_path %>-->
+							<% flash.each do |name, msg| %>
+								<div class="alert">
+									<button type="button" class="close" data-dismiss="alert">&times;</button>
+									<%= content_tag :div, msg, :id => "flash_#{name}" %>
+								</div>
+							<% end %>
+						</p>
+					</div>
+
+					<%= yield %>
+
+				</div>
+			</div>
+		</div>
+	</body>
+</HTML>
